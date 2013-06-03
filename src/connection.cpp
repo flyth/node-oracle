@@ -45,6 +45,7 @@ Connection::~Connection() {
 }
 
 Handle<Value> Connection::Execute(const Arguments& args) {
+  HandleScope scope;  
   Connection* connection = ObjectWrap::Unwrap<Connection>(args.This());
 
   REQ_STRING_ARG(0, sql);
